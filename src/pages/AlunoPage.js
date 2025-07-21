@@ -17,6 +17,11 @@ export default function AlunoPage({ alunos, treinos }) {
   // Estado para marcar exercícios realizados
   const [status, setStatus] = useState(Array(treinosFiltrados.length).fill(false));
 
+  // Calcular porcentagem de exercícios realizados
+  const total = status.length;
+  const feitos = status.filter(Boolean).length;
+  const porcentagem = total > 0 ? Math.round((feitos / total) * 100) : 0;
+
   function handleCheck(index) {
     setStatus(prev => prev.map((v, i) => i === index ? !v : v));
   }
@@ -39,7 +44,7 @@ export default function AlunoPage({ alunos, treinos }) {
         onClick={() => handleCheck(i)}
         type="button"
       >
-        {status[i] ? '✔️' : 'Marcar'}
+        {status[i] ? '✔️' : '✔️'}
       </button>
     ) },
   ];
@@ -73,6 +78,10 @@ export default function AlunoPage({ alunos, treinos }) {
         <p>Nenhum treino cadastrado ainda.</p>
       ) : (
         <>
+          {/* Porcentagem de exercícios realizados */}
+          <div className="mb-3" style={{textAlign: 'center'}}>
+            <span style={{fontWeight: 'bold', color: '#1976d2'}}>Progresso do treino: {porcentagem}%</span>
+          </div>
           <Tabela
             colunas={colunas}
             dados={dadosTabela}
