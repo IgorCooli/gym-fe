@@ -1,0 +1,131 @@
+body {
+  background: #f6fbff;
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  color: #222;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #1976d2;
+  font-weight: 600;
+}
+
+.container {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(25, 118, 210, 0.08);
+  padding: 2rem 2rem 1.5rem 2rem;
+  margin-top: 2rem;
+}
+
+.btn-primary, .btn-success {
+  background: #1976d2;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover, .btn-success:hover {
+  background: #63a4ff;
+}
+
+input.form-control, select.form-control {
+  border-radius: 8px;
+  border: 1px solid #b3d1f7;
+  background: #f6fbff;
+  margin-bottom: 1rem;
+}
+
+.list-group-item {
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+  background: #e3f0fc;
+  color: #1976d2;
+  font-weight: 500;
+}
+
+.form-check-input:checked {
+  background-color: #1976d2;
+  border-color: #1976d2;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: #e3f0fc;
+}
+::-webkit-scrollbar-thumb {
+  background: #b3d1f7;
+  border-radius: 8px;
+}
+
+.App {
+  text-align: center;
+}
+
+/* Responsividade geral */
+@media (max-width: 600px) {
+  .container {
+    padding: 1rem 0.5rem 1rem 0.5rem;
+    margin-top: 1rem;
+    border-radius: 10px;
+  }
+  h2, h4 {
+    font-size: 1.2rem;
+  }
+  nav {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+  }
+  .table {
+    font-size: 0.95rem;
+  }
+}
+
+/* Tabela responsiva para mobile */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  background: none;
+  border-radius: 0;
+}
+
+@media (max-width: 600px) {
+  .table thead {
+    display: none;
+  }
+  .table, .table tbody, .table tr, .table td {
+    display: block;
+    width: 100%;
+  }
+  .table tr {
+    margin-bottom: 1rem;
+    background: #e3f0fc;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px #b3d1f7;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  }
+  .table td {
+    text-align: left;
+    padding: 0.5rem 0.5rem;
+    border: none;
+    position: relative;
+  }
+  .table td:before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #1976d2;
+    display: block;
+    margin-bottom: 0.2rem;
+    font-size: 0.95rem;
+  }
+}
+
+.btn.active, .btn.btn-primary.active {
+  background: #63a4ff !important;
+  color: #fff !important;
+  border: 2px solid #1976d2;
+  box-shadow: 0 2px 8px #b3d1f7;
+}
